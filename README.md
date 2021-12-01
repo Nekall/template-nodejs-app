@@ -6,9 +6,10 @@ NodeJS―Express―MySQL
 
 **A simple NodeJS template with :**
 
- - An authentication system (Not Complet)
- - ⋯
-
+ - Authentication system
+ ↪ Register
+ ↪ Login
+*(Logout in front, so no need for a logout route, an expiration of the jwt within 24 hours is enough.)*
 
 **Installed libraries :**
  - bcrypt

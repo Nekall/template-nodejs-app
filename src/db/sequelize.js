@@ -23,7 +23,7 @@ const initDb = () => {
           password: hash
         })
       })
-    .then(user => console.log("Compte Admin créé. Username: admin; Password: admin."))
+    .then(_ => console.log("Compte Admin créé. Username: admin; Password: admin."))
 
     console.log(`La base de donnée nommée ${sequelize.config.database}, a bien été initialisée !`)
   })

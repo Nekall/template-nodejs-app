@@ -19,7 +19,6 @@ sequelize.initDb()
 require("./src/routes/initial")(app)
 require("./src/routes/login")(app)
 require("./src/routes/register")(app)
-require("./src/routes/logout")(app)
 
 app.use(({res}) =>{
   const message = "Impossible de trouver la ressource demandée ! Veuillez essayer une autre URL."

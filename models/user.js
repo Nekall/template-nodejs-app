@@ -1,10 +1,19 @@
+'use strict';
+const {
+  Model
+} = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  return sequelize.define('User', {
-    id: {
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      autoIncrement: true
-    },
+  class User extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
+  }
+  User.init({
     username: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -16,6 +25,9 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: { msg: "Le nom d'un utilisateur ne peut être vide."}
       }
     },
+    firstName: DataTypes.STRING,
+    lastName: DataTypes.STRING,
+    email: DataTypes.STRING,
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -24,5 +36,9 @@ module.exports = (sequelize, DataTypes) => {
         notEmpty: { msg: "Le mot de passe ne peut être vide."}
       }
     }
-  })
-}
+  }, {
+    sequelize,
+    modelName: 'User',
+  });
+  return User;
+};

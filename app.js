@@ -2,7 +2,7 @@ const express = require("express")
 const morgan = require("morgan")
 const bodyParser = require("body-parser")
 const favicon = require("serve-favicon")
-const sequelize = require("./src/db/sequelize")
+const sequelize = require("./db/sequelize")
 const cors = require("cors")
 
 const app = express()
@@ -16,9 +16,9 @@ app
 
 sequelize.initDb()
 
-require("./src/routes/initial")(app)
-require("./src/routes/login")(app)
-require("./src/routes/register")(app)
+require("./routes/initial")(app)
+require("./routes/login")(app)
+require("./routes/register")(app)
 
 app.use(({res}) =>{
   const message = "Impossible de trouver la ressource demandée ! Veuillez essayer une autre URL."

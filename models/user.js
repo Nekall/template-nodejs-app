@@ -18,11 +18,11 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       unique: {
-        msg: "Ce nom d'utilisateur est déjà pris."
+        msg: "This username is already taken."
       },
       validate: {
-        notNull: { msg: "Le nom d'utilisateur est une propriété requise."},
-        notEmpty: { msg: "Le nom d'un utilisateur ne peut être vide."}
+        notNull: { msg: "Username is a required property."},
+        notEmpty: { msg: "Name of a user cannot be empty."}
       }
     },
     firstName: DataTypes.STRING,
@@ -32,8 +32,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        notNull: { msg: "Le mot de passe est une propriété requise."},
-        notEmpty: { msg: "Le mot de passe ne peut être vide."}
+        notNull: { msg: "Password is a required property."},
+        notEmpty: { msg: "Password cannot be empty."}
       }
     }
   }, {

@@ -27,8 +27,8 @@ NodeJS―Express―MySQL
 **Installation :**
 
 Download this repo, <br />
-Create "private_key.js" in "auth" folder, with inside : <br />
-`module.exports = "CUSTOM_PRIVATE_KEY"` (Custom you key, obviously). <br />
+Create ".env" root folder, with inside : <br />
+`PRIVATE_KEY="CUSTOM_PRIVATE_KEY"` (Custom you key, obviously). <br />
 And finally change all "Template" string. <br />
   (package.json → change all your infos **or** reset a package.json with "npm init"; <br />
   sequelize.js → Name of DB; <br />

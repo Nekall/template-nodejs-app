@@ -17,12 +17,11 @@ app
 sequelize.initDb()
 
 require("./routes/initial")(app)
-require("./routes/login")(app)
-require("./routes/register")(app)
+require("./routes/users")(app)
 
 app.use(({res}) =>{
-  const message = "Impossible de trouver la ressource demandée ! Veuillez essayer une autre URL."
+  const message = "Could not find the requested resource! Please try another URL."
   res.status(404).json({message})
 })
 
-app.listen(port, () => console.log(`App démarrée sur: localhost:${port}`))
+app.listen(port, () => console.log(`App started on: http://localhost:${port}/`))

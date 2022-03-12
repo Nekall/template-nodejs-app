@@ -14,7 +14,7 @@ const sequelize = new Sequelize('Template', 'root', '', {
 const User = UserModel(sequelize, DataTypes)
 
 const initDb = () => {
-  return sequelize.sync({force: true}).then(_ => { //force: true pour drop la BDD et la recréer à chaque démarrage
+  return sequelize.sync({force: true}).then(_ => { //force: TRUE to drop the DB and recreate it at each startup
 
     bcrypt.hash('admin', 10)
     .then(hash => {
@@ -23,9 +23,9 @@ const initDb = () => {
           password: hash
         })
       })
-    .then(_ => console.log("Compte Admin créé. Username: admin; Password: admin."))
+    .then(_ => console.log("Admin account created. Username: admin; Password: admin."))
 
-    console.log(`La base de donnée nommée ${sequelize.config.database}, a bien été initialisée !`)
+    console.log(`The database named ${sequelize.config.database}, has been initialized !`)
   })
 }
 
